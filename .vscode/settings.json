@@ -1,0 +1,19 @@
+{
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "enabled": true
+    },
+    "files.associations": {
+        "random": "cpp",
+        "iostream": "cpp",
+        "vector": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "chrono": "cpp",
+        "typeindex": "cpp",
+        "typeinfo": "cpp"
+    }
+}
