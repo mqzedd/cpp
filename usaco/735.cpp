@@ -14,9 +14,11 @@ int main()
     // setIO("lostcow");
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int a, b;
-    cin >> a >> b;
-    while (a--)
+    int x, y;
+    int c = 1;
+    cin >> x >> y;
+    while (true)
     {
+        if (< y)
     }
 }
