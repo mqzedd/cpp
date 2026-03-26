@@ -4,6 +4,12 @@ using namespace std;
 using ll = long long;
 using vi = vector<int>;
 using vll = vector<ll>;
+using pii = pair<int, int>;
+#define f first
+#define s second
+#define sz(x) int((x).size())
+#define all(x) (x).begin(), (x).end()
+
 void setIO(const string &name)
 {
     freopen((name + ".in").c_str(), "r", stdin);
@@ -11,14 +17,20 @@ void setIO(const string &name)
 }
 int main()
 {
-    // setIO("lostcow");
+    setIO("lostcow");
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int x, y;
-    int c = 1;
+    ll x, y, next;
+    ll diff = -2;
     cin >> x >> y;
-    while (true)
+    ll distance;
+    next = x;
+    while (next != y)
     {
-        if (< y)
+        next = x + diff;
+        if ((x <= y && y <= next) || (x >= y && y >= next))
+        {
+            dist +=
+        }
     }
 }
