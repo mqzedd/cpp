@@ -15,4 +15,16 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     ll a;
+    ll b = 1;
+    cin >> a;
+    vll n(a);
+    for (int i = 0; i < a; i++)
+    {
+        cin >> n[i];
+    }
+    for (auto x : n)
+    {
+        b = lcm(b, x);
+    }
+    cout << b << '\n';
 }

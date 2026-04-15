@@ -14,5 +14,21 @@ int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    ll a;
+    string a;
+    cin >> a;
+    ll six = 0;
+    ll count = 0;
+    for (auto x : a)
+    {
+        if (x == '6')
+        {
+            six++;
+        }
+        if (x == '7' && six > 0)
+        {
+            six--;
+            count++;
+        }
+    }
+    cout << count << '\n';
 }

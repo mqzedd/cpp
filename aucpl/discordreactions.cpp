@@ -14,5 +14,7 @@ int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    ll a;
+    ll a, b, c;
+    cin >> a >> b >> c;
+    cout << min(b, a) - max(0LL, a - c) + 1 << '\n';
 }

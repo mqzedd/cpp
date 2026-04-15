@@ -14,5 +14,20 @@ int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    ll a;
+    ll n;
+    cin >> n;
+    vll c(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> c[i];
+    }
+    double v;
+    double m = 0.0;
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> v;
+        m = max(m, v * c[i]);
+    }
+    cout << fixed << setprecision(3) << m << '\n';
 }

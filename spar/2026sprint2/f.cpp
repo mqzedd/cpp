@@ -1,10 +1,13 @@
 #include <bits/stdc++.h>
+#include <bit>
+#include <bitset>
 using namespace std;
 
 using ll = long long;
 using vi = vector<int>;
 using vll = vector<ll>;
 using pii = pair<int, int>;
+using ull = unsigned ll;
 #define f first
 #define s second
 #define sz(x) int((x).size())
@@ -12,7 +15,7 @@ using pii = pair<int, int>;
 
 int main()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    ll a;
+    ull n;
+    cin >> n;
+    cout << bit_ceil((ull)bit_width(n)) << (n == 1 ? " bit" : " bits");
 }

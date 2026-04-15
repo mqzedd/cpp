@@ -8,8 +8,6 @@ using pii = pair<int, int>;
 #define f first
 #define s second
 #define sz(x) int((x).size())
-#include <bits/stdc++.h>
-using namespace std;
 
 class Graph
 {

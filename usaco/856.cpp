@@ -3,7 +3,7 @@ using namespace std;
 
 #define int long long
 
-#define FOR(i, a, b) for (int i = a; i < (b); ++i)
+#define rep(i, a, b) for (int i = a; i < (b); ++i)
 #define all(x) begin(x), end(x)
 #define sz(x) (int)(x).size()
 #define endl '\n'
@@ -15,24 +15,24 @@ void setIO(const string& name) {
     freopen((name + ".in").c_str(), "r", stdin);
     freopen((name + ".out").c_str(), "w", stdout);
 }
-int32_t main() {
-    setIO("lostcow");
+int32_t main()
+{
+    setIO("blist");
     cin.tie(0)->sync_with_stdio(0);
     cin.exceptions(cin.failbit);
-    ll x, y;
-    cin >> x >> y;
-    ll xog = x;
-    int step = 1;
-    int distance = 0;
-    while (true) {
-        ll nx = xog + step ; 
-        if((x <= y && y <= nx )||(nx <= y && y <= x)){
-            distance +=  abs(y-x);
-            cout << distance << endl;
-            break;
+    ll n; cin >> n;
+    vi s(n), t(n), b(n);
+    unordered_map<int,int> times;
+    rep(i,0,n) cin >> s[i] >> t[i] >> b[i];
+    rep(i,0,n){
+        rep(_,s[i],t[i]){
+            times[_]+=b[i];
         }
-        distance += abs(x- nx);
-        x = nx;
-        step *= -2;
     }
+    ll buckets = 0;
+    for(auto x : times){
+        buckets = max(buckets,x.second);
+        // cerr << x.second << endl;
+    }
+    cout << buckets << endl;
 }
