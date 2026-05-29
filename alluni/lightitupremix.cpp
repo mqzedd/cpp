@@ -10,47 +10,39 @@ using namespace std;
 
 typedef long long ll;
 typedef pair<int, int> pii;
-typedef vector<int> vi;
+typedef vector<ll> vi;
 
+ll INF = 1e18;
+
+int solve(){
+    ll n; cin >> n;
+    vi c(n);
+    for(auto &x : c) cin >> x;
+    if(n <= 3){
+        cout << *min_element(all(c)) << endl;
+        return 0;
+    }
+    ll ans = INF;
+    rep(_,0,4){
+    vi dp(n-1,INF);
+    dp[0] = c[0];
+    rep(i,1,n-1){
+        rep(j,max((long long)0,i-3),i){
+            dp[i] = min(dp[i],dp[j] + c[i]);
+        }
+        // cout << ans << endl;
+    }
+    ans = min({ans,dp[n-2],dp[n-3]});
+    rotate(c.begin(),c.begin()+1,c.end());
+    }
+    cout << ans << endl;
+    return 0;
+}
 int32_t main()
 {
     cin.tie(0)->sync_with_stdio(0);
     cin.exceptions(cin.failbit);
-
     ll t; cin >> t;
-    rep(i,0,t){
-        ll n; cin >> n;
-        vector<int> c(n);
-        rep(i,0,n){
-            cin >> c[i];
-        }
-        ll an1,an2;
-        vector<ll> c2(n);
-        rep(i,0,n){
-            if(i != n-1){
-                c2[i+1] = c[i];
-            }else{
-                c2[0] = c[i];
-            }
-        }
-        vector<ll> dp(n+1,INT_MAX);
-        dp[0] = c[0];
-        dp[1] = c[1];
-        dp[2] = c[2];
-        for(int i = 3;i < sz(c);i++){
-            dp[i] = min({dp[i-1],dp[i-2],dp[i-3]}) + c[i];
-            // cout << dp[i] << endl;
-        }
-        an1 = min(dp[n],dp[n-1]);
-        vector<ll> dp2(n+1,INT_MAX);
-        dp2[0] = c2[0];
-        dp2[1] = c2[1];
-        dp2[2] = c2[2];
-        for(int i = 3;i < sz(c);i++){
-            dp2[i] = min({dp2[i-1],dp2[i-2],dp2[i-3]}) + c2[i];
-        }
-        an2 = min(dp2[n],dp2[n-1]);
-        cout << min(an1,an2) << endl;
-
-    }
+    while(t--){
+    solve();}
 }
